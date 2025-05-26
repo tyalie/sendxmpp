@@ -64,8 +64,11 @@ class SendMsgBot(slixmpp.ClientXMPP):
 
         # iterate over all recipients and send the respective message
         for mtype, recipient in self.recipients:
+            message = self.message
             if mtype == "groupchat":
                 await self.plugin["xep_0045"].join_muc_wait(recipient, self.nickname)
+            else:
+                message = f"From: {self.nickname}\n{message}"
 
             self.send_message(mto=recipient, mbody=self.message, mtype=mtype)
 
