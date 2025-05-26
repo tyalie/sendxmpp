@@ -54,7 +54,7 @@ From bash
 
 ```bash
 $ ./sendmail.py -t << MESSAGE_END
-To: <sysadmin@muc.xmpp.me>
+To: <sysadmin/groupchat@muc.xmpp.me>
 From: hypervisor@home
 Subject: status update
 
