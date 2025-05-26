@@ -11,6 +11,17 @@ manner. The tool will also abuse the mail syntax so that the to and from
 address will specify which person or MUCs will be addressed and which nickname
 should be used.
 
+e.g.
+```bash
+$ ./sendmail.py -t << MESSAGE_END
+To: <sysadmin/groupchat@muc.xmpp.me>
+From: hypervisor@home
+Subject: status update
+
+nothing out of the ordinary
+MESSAGE_END
+```
+
 ## Usage
 
 The script assumes that recipient addresses and such can be parsed from stdin.
@@ -49,15 +60,3 @@ jid = JID@DOMAIN
 password = THEPWD
 ```
 
-## Example
-From bash
-
-```bash
-$ ./sendmail.py -t << MESSAGE_END
-To: <sysadmin/groupchat@muc.xmpp.me>
-From: hypervisor@home
-Subject: status update
-
-nothing out of the ordinary
-MESSAGE_END
-```
